@@ -52,7 +52,7 @@ npm start
 <p>6. Backend</p>
 
 ```
-node server.js
+npm start
 ```
 
   
