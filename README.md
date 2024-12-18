@@ -1,90 +1,72 @@
-# Project Assignment Module
+<h1 align="center" id="title">Vishwajeet's BLOG</h1>
 
-This project is built using the MERN stack (MongoDB, Express, React, Node.js) to manage project assignments for candidates. It allows candidates to view, accept, and track assigned projects, as well as provides a mechanism to track their progress and calculate scores based on task completion.
+<p align="center"><img src="https://socialify.git.ci/Vishwajeet-Kumar-Patel/Blog/image?description=1&descriptionEditable=Vishwajeet%27s%20Blog%20is%20a%20platform%20that%20allows%20users%20to%20share%20their%20thoughts%20and%20ideas%20with%20the%20world.&font=Raleway&issues=1&language=1&name=1&owner=1&pattern=Charlie%20Brown&stargazers=1&theme=Dark" alt="project-image"></p>
 
-## Project Structure
+<p id="description">Vishwajeet's Blog is a platform that allows users to share their thoughts and ideas with the world. Users can create edit and delete posts as well as update their personal profiles. The platform features a carousel of featured posts on the homepage a dashboard for authors to manage their posts and a responsive design to ensure an optimal user experience across all devices.</p>
 
-```
-project-assignment-module
-├── backend
-│   ├── controllers
-│   │   └── projectController.js
-│   ├── models
-│   │   └── projectModel.js
-│   ├── routes
-│   │   └── projectRoutes.js
-│   ├── config
-│   │   └── db.js
-│   ├── server.js
-│   └── package.json
-├── frontend
-│   ├── public
-│   │   └── index.html
-│   ├── src
-│   │   ├── components
-│   │   │   └── ProjectComponent.js
-│   │   ├── pages
-│   │   │   └── ProjectPage.js
-│   │   ├── App.js
-│   │   ├── index.js
-│   │   └── package.json
-├── README.md
-└── .gitignore
-```
+<h2>Project Screenshots:</h2>
 
-## Features
+![Image](https://github.com/Vishwajeet-Kumar-Patel/Blog/blob/master/Screenshot%202024-11-16%20014148.png?raw=true)
+![Image](https://github.com/Vishwajeet-Kumar-Patel/Blog/blob/master/Screenshot%202024-11-16%20014201.png?raw=true)
+![Image](https://github.com/Vishwajeet-Kumar-Patel/Blog/blob/master/Screenshot%202024-11-16%20014223.png?raw=true)
+
+  
+<h2>🧐 Features</h2>
+
+Here're some of the project's best features:
 
 - **Project Management**: Candidates can view all available projects, accept assignments, and track their progress.
 - **Progress Tracking**: A scoring system to evaluate candidates based on task completion.
 - **Dynamic Data Handling**: Data is stored in a MongoDB database and displayed dynamically on the frontend.
 
-## Getting Started
+<h2>🛠️ Installation Steps:</h2>
 
-### Prerequisites
+<p>1. Frontend:</p>
 
-- Node.js
-- MongoDB
+```
+cd client
+```
 
-### Installation
+```
+npm install
+```
 
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   ```
+<p>3. Backend</p>
 
-2. Navigate to the backend directory and install dependencies:
-   ```
-   cd project-assignment-module/backend
-   npm install
-   ```
+```
+cd backend
+```
 
-3. Navigate to the frontend directory and install dependencies:
-   ```
-   cd ../frontend
-   npm install
-   ```
+```
+npm install
+```
 
-### Running the Application
+<p>5. Frontend</p>
 
-1. Start the backend server:
-   ```
-   cd project-assignment-module/backend
-   node server.js
-   ```
+```
+npm start
+```
 
-2. Start the frontend application:
-   ```
-   cd project-assignment-module/frontend
-   npm start
-   ```
+<p>6. Backend</p>
 
-## API Endpoints
+```
+node server.js
+```
 
-- `GET /api/projects`: Retrieve all projects
-- `GET /api/projects/:id`: Retrieve a specific project by ID
-- `POST /api/projects`: Create a new project
-- `PUT /api/projects/:id`: Update an existing project
-- `DELETE /api/projects/:id`: Delete a project
+  
+  
+<h2>💻 Built with</h2>
+
+Technologies used in the project:
+
+*   MongoDB
+*   Express.js
+*   React.js
+*   Node.js
+*   jsonwebtoken
+*   Axios
+*   Bootstrap
+*   Multer
 
 ## Contributing
 
