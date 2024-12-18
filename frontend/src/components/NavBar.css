@@ -1,0 +1,105 @@
+/* General NavBar Styles */
+nav {
+    background: linear-gradient(135deg, #232526, #414345); /* Gradient background */
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px; /* Thicker navbar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Logo */
+  .logo {
+    font-size: 1.8rem; /* Larger font size */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #f9f9f9;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .logo:hover {
+    color: #00e5ff; /* Accent color for hover */
+  }
+  
+  /* Navigation Links */
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px; /* More spacing between links */
+  }
+  
+  ul li {
+    display: inline-block;
+  }
+  
+  ul li a,
+  ul li button {
+    text-decoration: none;
+    color: #f1f1f1;
+    font-size: 1.1rem; /* Readable font size */
+    font-weight: 500;
+    padding: 10px 15px; /* Adds more clickable area */
+    border-radius: 8px;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    margin-top: -11px;
+  }
+  
+  ul li a:hover,
+  ul li button:hover {
+    color: #232526;
+    background-color: #00e5ff; /* Bright hover effect */
+    transform: scale(1.05); /* Subtle pop-up effect */
+  }
+  
+  /* Logout Button */
+  ul li button {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    color: #f1f1f1;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  ul li button:hover {
+    background-color: #f44336; /* Red hover effect for logout */
+    color: #fff;
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      align-items: center;
+      padding: 15px;
+    }
+  
+    ul {
+      flex-direction: column;
+      width: 100%;
+      gap: 15px;
+    }
+  
+    ul li {
+      width: 100%;
+    }
+  
+    ul li a,
+    ul li button {
+      text-align: center;
+      width: 100%;
+      display: block;
+    }
+  }
+  
