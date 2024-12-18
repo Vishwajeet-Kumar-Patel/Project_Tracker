@@ -1,23 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 import ProjectComponent from '../components/ProjectComponent';
 import AddProject from '../components/AddProject';
+import { Link } from 'react-router-dom';
+import { FaCheckCircle, FaHourglassHalf, FaCircleNotch } from 'react-icons/fa'; // Import icons
 import './ProjectPage.css';
 
 const ProjectPage = () => {
   const [projects, setProjects] = useState([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
-    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-    if (!userInfo) {
-      alert('Please log in');
-      navigate('/login');
-      return;
-    }
-
     const fetchProjects = async () => {
+      const userInfo = JSON.parse(localStorage.getItem('userInfo'));
       const config = {
         headers: {
           Authorization: `Bearer ${userInfo.token}`,
@@ -28,7 +22,7 @@ const ProjectPage = () => {
     };
 
     fetchProjects();
-  }, [navigate]);
+  }, []);
 
   const handleProjectAdded = (newProject) => {
     setProjects([...projects, newProject]);
@@ -38,12 +32,26 @@ const ProjectPage = () => {
     setProjects(projects.map(project => project._id === updatedProject._id ? updatedProject : project));
   };
 
+  // Function to get the appropriate icon based on the project status
+  const getStatusIcon = (status) => {
+    switch (status) {
+      case 'assigned':
+        return <FaCircleNotch className="status-icon assigned" />;
+      case 'in-progress':
+        return <FaHourglassHalf className="status-icon in-progress" />;
+      case 'completed':
+        return <FaCheckCircle className="status-icon completed" />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className="project-page">
       <h1>Project Assignments</h1>
       <div className="actions">
-        <button onClick={() => navigate('/logout')}>Logout</button>
-        <button onClick={() => navigate('/delete-account')}>Delete Account</button>
+        <Link to="/logout">Logout</Link>
+        <Link to="/delete-account">Delete Account</Link>
       </div>
       <div className="add-project-form">
         <AddProject onProjectAdded={handleProjectAdded} />
@@ -52,7 +60,10 @@ const ProjectPage = () => {
         <p>No projects available.</p>
       ) : (
         projects.map(project => (
-          <ProjectComponent key={project._id} project={project} onProjectUpdated={handleProjectUpdated} />
+          <div key={project._id} className="project-item">
+            {getStatusIcon(project.status)} {/* Display the icon */}
+            <ProjectComponent project={project} onProjectUpdated={handleProjectUpdated} />
+          </div>
         ))
       )}
     </div>
